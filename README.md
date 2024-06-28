@@ -1,2 +1,2 @@
 ### Iso8583 Server Simulator
-Simulator using spring boot & JPOS
+Simulator using JPOS & spring boot bean `ISORequestListener`
