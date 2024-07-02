@@ -1,0 +1,11 @@
+databaseChangeLog:
+
+  - include:
+      file: ddl/20240701_init.sql
+      author: agussuhardi
+      relativeToChangelogFile: true
+
+  - include:
+      file: dml/sample.sql
+      author: agussuhardi
+      relativeToChangelogFile: true
