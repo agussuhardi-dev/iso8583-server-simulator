@@ -27,9 +27,11 @@ public class Iso8583 implements Serializable {
     @UuidGenerator(style = UuidGenerator.Style.TIME)
     @GeneratedValue
     private String id;
-    @Type(JsonBlobType.class)
+
+    @Type(JsonType.class)
     @Column(name = "response", columnDefinition = "text")
     private String response;
+
     @Column(name = "is_enabled")
     private Boolean enabled;
     @Column(name = "acquirer_code")

@@ -49,9 +49,9 @@
 
 
                 <div class="col-12">
-                    <label class="form-label" for="responseJSONB">Response</label>
-                    <textarea class="form-control" id="responseJSONB"
-                              name="responseJSONB" required
+                    <label class="form-label" for="response">Response</label>
+                    <textarea class="form-control" id="response"
+                              name="response" required
                               rows="15"></textarea>
                 </div>
 
@@ -92,7 +92,7 @@
                 for (const [key, value] of Object.entries(response.data)) {
                     let input = $('#' + key);
                     input.val(value);
-                    if (key === 'responseJSONB') {
+                    if (key === 'response') {
                         input.val(JSON.stringify(value, undefined, 2));
                     }
 
@@ -106,9 +106,10 @@
         let obj = JSON.parse(serialize_form(this));
 
         try {
-            obj['responseJSONB'] = JSON.parse(obj['responseJSONB'])
+            JSON.parse(obj['response'])
         } catch (e) {
             alert('invalid json format')
+            return;
         }
 
         $.ajax({
@@ -162,8 +163,8 @@
             url: apiUrl + '/templates/' + id,
             type: 'GET',
             success: function (response) {
-                console.log(response.data.templateJSONB)
-                $('#responseJSONB').val(JSON.stringify(response.data.templateJSONB, undefined, 2));
+                console.log(response.data.template)
+                $('#response').val(JSON.stringify(response.data.template, undefined, 2));
             }
         })
 

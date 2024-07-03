@@ -9,6 +9,7 @@ import io.github.dev.agussuhardi.isosim.util.ObjectMapperUtil;
 import io.github.dev.agussuhardi.isosim.vo.Iso8583QueryVO;
 import io.github.dev.agussuhardi.isosim.vo.Iso8583VO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +20,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class Iso8583ServiceImpl implements Iso8583Service {
 
     private final Iso8583Repository iso8583Repository;
@@ -26,9 +28,11 @@ public class Iso8583ServiceImpl implements Iso8583Service {
     @Transactional
     @Override
     public Iso8583DTO save(Iso8583VO vO) {
+        log.info("save => {}", vO);
         iso8583Repository.disableAll();
         Iso8583 bean = new Iso8583();
         BeanUtils.copyProperties(vO, bean);
+        log.info("save => {}", bean);
         bean = iso8583Repository.save(bean);
         return toDTO(bean);
     }

@@ -8,6 +8,7 @@ import io.github.dev.agussuhardi.isosim.util.ObjectMapperUtil;
 import io.github.dev.agussuhardi.isosim.vo.Iso8583ResponseTemplateQueryVO;
 import io.github.dev.agussuhardi.isosim.vo.Iso8583ResponseTemplateVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,14 +18,17 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class Iso8583ResponseTemplateServiceImpl implements Iso8583ResponseTemplateService {
 
     private final Iso8583ResponseTemplateRepository iso8583ResponseTemplateRepository;
 
     @Override
     public void save(Iso8583ResponseTemplateVO vO) {
+        log.info("save => {}", vO);
         Iso8583ResponseTemplate bean = new Iso8583ResponseTemplate();
         BeanUtils.copyProperties(vO, bean);
+        log.info("save => {}", bean);
         iso8583ResponseTemplateRepository.save(bean);
     }
 

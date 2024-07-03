@@ -17,8 +17,7 @@ public class Iso8583ResponseTemplateVO implements Serializable {
     @NotNull(message = "name can not null")
     private String name;
     private String explain;
-    @NotNull(message = "response can not null")
-    @NotNull(message = "response can not null")
-    private Map<String, Object> templateJSONB;
+    @NotNull(message = "template can not null")
+    private String template;
 
 }

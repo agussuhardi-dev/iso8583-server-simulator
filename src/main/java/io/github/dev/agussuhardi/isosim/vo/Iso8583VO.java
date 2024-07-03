@@ -13,7 +13,7 @@ public class Iso8583VO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
-    private Map<String, Object> responseJSONB;
+    private String response;
     private Boolean enabled;
     private String acquirerCode;
     private String acquirerName;

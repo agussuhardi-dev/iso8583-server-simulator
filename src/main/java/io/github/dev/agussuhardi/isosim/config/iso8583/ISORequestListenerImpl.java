@@ -53,7 +53,8 @@ public class ISORequestListenerImpl implements ISORequestListener {
     public boolean process(ISOSource sender, ISOMsg request) {
 
         var mapRequest = Iso8583Util.isoToMap(request);
-        var jsonb = ObjectMapperUtil.toJson(mapRequest);
+        String jsonb = null;
+        jsonb = ObjectMapperUtil.toJson(mapRequest);
         historyRepository.save(
                 History.builder()
                         .acquirerCode("BNI")
