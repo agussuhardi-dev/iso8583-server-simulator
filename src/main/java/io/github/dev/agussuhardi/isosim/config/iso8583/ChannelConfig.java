@@ -1,4 +1,4 @@
-package io.github.dev.agussuhardi.isosim.config;
+package io.github.dev.agussuhardi.isosim.config.iso8583;
 
 import org.apache.commons.lang.StringUtils;
 import org.jpos.iso.BaseChannel;

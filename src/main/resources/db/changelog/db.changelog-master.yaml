@@ -1,0 +1,9 @@
+databaseChangeLog:
+
+  - include:
+      context: dev
+      author: agussuhardi
+      created: 15-03-2024
+      labels: base scheme
+      file: scheme/base/base.scheme.yaml
+      relativeToChangelogFile: true
