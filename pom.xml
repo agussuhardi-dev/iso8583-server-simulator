@@ -10,7 +10,7 @@
     </parent>
     <groupId>io.github.dev.agussuhardi</groupId>
     <artifactId>isosim</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>iso8583-server-simulator</name>
     <description>iso8583-server-simulator</description>
     <url/>
