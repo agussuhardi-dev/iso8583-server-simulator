@@ -29,6 +29,7 @@ public class MvcConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("iso8583/list");
         registry.addViewController("/iso8583").setViewName("iso8583/list");
         registry.addViewController("/iso8583/form").setViewName("iso8583/form");
 
