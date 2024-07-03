@@ -8,7 +8,6 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Map;
 
 @Data
 @Entity

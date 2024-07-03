@@ -5,7 +5,6 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Map;
 
 @Data
 public class Iso8583VO implements Serializable {

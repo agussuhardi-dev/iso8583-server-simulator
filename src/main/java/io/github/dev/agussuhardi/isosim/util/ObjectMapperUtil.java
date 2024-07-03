@@ -1,6 +1,5 @@
 package io.github.dev.agussuhardi.isosim.util;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,39 +14,39 @@ import java.util.Map;
  * {@code @project} svc-ovo
  */
 public class ObjectMapperUtil {
-  private static ObjectMapper mapper = null;
+    private static ObjectMapper mapper = null;
 
-  private ObjectMapperUtil() {
-    throw new IllegalStateException("Utility class");
-  }
-
-  public static ObjectMapper getInstance() {
-    if (mapper == null) {
-      mapper = new ObjectMapper();
-      mapper = new ObjectMapper();
-      mapper.registerModule(new JavaTimeModule());
+    private ObjectMapperUtil() {
+        throw new IllegalStateException("Utility class");
     }
-    return mapper;
-  }
 
-  @SneakyThrows
-  public static <T> T toObject(String obj, Class<T> clazz) {
-    return getInstance().readValue(obj, clazz);
-  }
+    public static ObjectMapper getInstance() {
+        if (mapper == null) {
+            mapper = new ObjectMapper();
+            mapper = new ObjectMapper();
+            mapper.registerModule(new JavaTimeModule());
+        }
+        return mapper;
+    }
 
-  @SneakyThrows
-  public static String toJson(Object obj) {
-    return getInstance().writeValueAsString(obj);
-  }
+    @SneakyThrows
+    public static <T> T toObject(String obj, Class<T> clazz) {
+        return getInstance().readValue(obj, clazz);
+    }
 
-  @SneakyThrows
-  public static Map<String, Object> toMap(String json) {
-    return getInstance().readValue(json, new TypeReference<>() {
-    });
-  }
+    @SneakyThrows
+    public static String toJson(Object obj) {
+        return getInstance().writeValueAsString(obj);
+    }
 
-  @SneakyThrows
-  public static JsonNode getJsonNode(String json) {
-    return getInstance().readTree(json);
-  }
+    @SneakyThrows
+    public static Map<String, Object> toMap(String json) {
+        return getInstance().readValue(json, new TypeReference<>() {
+        });
+    }
+
+    @SneakyThrows
+    public static JsonNode getJsonNode(String json) {
+        return getInstance().readTree(json);
+    }
 }

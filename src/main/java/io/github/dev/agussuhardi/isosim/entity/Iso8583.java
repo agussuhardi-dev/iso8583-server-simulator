@@ -1,6 +1,5 @@
 package io.github.dev.agussuhardi.isosim.entity;
 
-import io.hypersistence.utils.hibernate.type.json.JsonBlobType;
 import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -9,7 +8,6 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Map;
 
 @Data
 @Entity
